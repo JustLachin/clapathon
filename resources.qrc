@@ -1,0 +1,9 @@
+<!DOCTYPE RCC>
+<RCC version="1.0">
+    <qresource prefix="/">
+        <file>templates/index.html</file>
+        <file>styles/main.css</file>
+        <file>scripts/main.js</file>
+        <file>assets/logo.png</file>
+    </qresource>
+</RCC> 

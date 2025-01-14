@@ -1,0 +1,15 @@
+opencv-python==4.8.1.78
+PyQt5==5.15.9
+PyQtWebEngine==5.15.6
+mediapipe==0.10.8
+numpy==1.26.0
+pillow==10.0.1
+pyautogui==0.9.54
+comtypes==1.2.0
+pycaw==20230407
+keyboard==0.13.5
+screen-brightness-control==0.14.1
+pygame==2.5.2
+sounddevice==0.4.6
+soundfile==0.12.1
+spotipy==2.23.0 

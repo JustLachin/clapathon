@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clapathon</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="logo">
+                <img src="assets/logo.png" alt="Logo">
+            </div>
+            <button class="menu-item" id="cameraToggle">
+                <i class="fas fa-video"></i>
+                <span>Start Camera</span>
+            </button>
+            <button class="menu-item" id="settingsBtn">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </button>
+            <button class="menu-item" id="helpBtn">
+                <i class="fas fa-question-circle"></i>
+                <span>Help</span>
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Header -->
+            <div class="header">
+                <div class="status-bar">
+                    <div class="status-indicator" id="cameraStatus"></div>
+                    <span id="statusText">Camera Off</span>
+                </div>
+                <div class="volume-control">
+                    <input type="range" id="volumeControl" min="0" max="100" value="50">
+                    <span id="volumeValue">50%</span>
+                </div>
+            </div>
+
+            <!-- Camera Container -->
+            <div class="camera-container">
+                <div id="gestureOverlay">
+                    <span id="gestureText">Starting camera...</span>
+                </div>
+                <select id="cameraSelect">
+                    <option value="">Select Camera...</option>
+                </select>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="controls-panel">
+                <!-- Movement Controls -->
+                <div class="control-card">
+                    <h3>Motion Controls</h3>
+                    <div class="control-list">
+                        <div class="control-item">
+                            <i class="fas fa-hand"></i>
+                            <span>Volume control with hand gestures</span>
+                        </div>
+                        <div class="control-item">
+                            <i class="fas fa-camera"></i>
+                            <span>Screenshot with clap</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Statistics -->
+                <div class="control-card">
+                    <h3>Statistics</h3>
+                    <div class="statistics">
+                        <div class="stat-item">
+                            <span>Detected Gestures</span>
+                            <div class="stat-value" id="gestureCount">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <span>Screenshots</span>
+                            <div class="stat-value" id="screenshotCount">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <span>Uptime</span>
+                            <div class="stat-value" id="uptime">00:00:00</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="settings-form">
+                <div class="form-group">
+                    <label for="resolution">Camera Resolution</label>
+                    <select id="resolution">
+                        <option value="1920x1080">1920x1080 (FHD)</option>
+                        <option value="1280x720">1280x720 (HD)</option>
+                        <option value="854x480">854x480 (SD)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="fpsLimit">FPS Limit</label>
+                    <input type="number" id="fpsLimit" value="30" min="1" max="60">
+                </div>
+                <div class="form-group">
+                    <label for="sensitivity">Motion Sensitivity</label>
+                    <input type="range" id="sensitivity" min="1" max="100" value="50">
+                </div>
+                <div class="form-group">
+                    <label for="confidenceThreshold">Confidence Threshold (%)</label>
+                    <input type="range" id="confidenceThreshold" min="1" max="100" value="70">
+                </div>
+                <div class="form-group">
+                    <label for="imageQuality">Image Quality</label>
+                    <select id="imageQuality">
+                        <option value="high">High</option>
+                        <option value="medium">Medium</option>
+                        <option value="low">Low</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="imageFilter">Image Filter</label>
+                    <select id="imageFilter">
+                        <option value="none">None</option>
+                        <option value="grayscale">Grayscale</option>
+                        <option value="blur">Blur</option>
+                        <option value="sharpen">Sharpen</option>
+                    </select>
+                </div>
+                <button id="saveSettings">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html> 
